@@ -1,5 +1,10 @@
+/**
+Semester 2. 
+Zadanie 1.1 
+*/
+
 #include <stdio.h>
-#define N = 9;
+#define N 9
 
 void wyswietl(int *p1, int *p2)
 {
@@ -14,16 +19,42 @@ int main() {
 	int k, x;
 	int *p, *p1;
 	
+	// (a) x=0; for(k=0; k<N; ++k)x+= ƒx(a+k);
 
-	for(k = 0; k < 7; ++k) { 
-		printf("%d", p[k]);
+	printf("Zadanie 1.1.a\n");
+	wyswietl(a, a + N); printf("\n");
+	x = 0; 
+	for(k = 0; k < N; ++k) { 
+		x += *(a + k);
+		printf("x = %d\n", x);
 	}
-	printf("\n");
 
-	p = &a[2];
-	for(k = -2; k < 5; ++k) {
-		printf("%d", p[k]);
+	// (b) x=0; for(p=a; p<a+N; ++p)x+= *p;
+	printf("Zadanie 1.1.b\n");
+	x = 0; 
+	for(p = a; p < a+N; ++p) {
+		x += *p;
+		printf("x = %d\n", x);
 	}
+	
+	// (c) p1=a; while(p1<a+N && *p1!=0) ++p1;
+	printf("Zadanie 1.1.c\n");
+	p1 = a; 
+	while(p1 < a+N && *p1 != 0) {
+		printf("p1 = %d\n", *p1);
+		
+		++p1;
+	}
+		
+	// (d) p1 = a; for(p = a+1; p < a + N; ++p) if(*p1 < *p) p1 = p;
+	printf("Zadanie 1.1.d\n");
+	p1 = a; 
+	for(p = a+1; p < a + N; ++p) {
+		printf("p1 = %d\n", *p1);
+		if(*p1 < *p) {
+			p1 = p;
+		}
+	} 		
 
 	return 0;
 }
